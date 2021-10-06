@@ -30,7 +30,7 @@ void q(){
 
 void m(){
 
-	cout << "m=" << m << endl;
+	cout << "m=" << m_ << endl;
 	cout << endl;
 
 }
@@ -54,7 +54,7 @@ void info(){
 
 	cout << "q=" << q_ << endl;
         cout << endl;
-	cout << "m=" << m << endl; 
+	cout << "m=" << m_ << endl; 
         cout << endl;
 	r_.print("r=");
 	v_.print("v=");
