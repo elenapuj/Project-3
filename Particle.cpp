@@ -3,7 +3,7 @@
 #include "Particle.hpp"
 
 
-//Vamo pa ello
+//Constructor
 
 Particle::Particle(double q_in, double m_in, vec r_in, vec v_in){
 
