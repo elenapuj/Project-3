@@ -1,7 +1,7 @@
 //Here we define the "Particle" class
 
-#ifndef __LotteryBall_hpp__
-#define __LotteryBall_hpp__
+#ifndef __Particle_hpp__
+#define __Particle_hpp__
 
 
 #include <armadillo>
