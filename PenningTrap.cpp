@@ -26,9 +26,15 @@ particle_collection.push_back(particle_in);
 }
 
 
-void external_E_field(vec r_){
-
-
+void external_E_field(vec particle_collection[i].r_ , double v0_ , double d_ ){
+	
+	vec external_E_field = zeros(3);
+	
+	external_E_field[0] = v0_ * particle_collection[i].r_[0]  / ( d_ * d_ );
+	
+	external_E_field[1] =  v0_ * particle_collection[i].r_[1] / ( d_ * d_ );
+		
+	external_E_field[2] =  - v0_ * 2 * particle_collection[i].r_[2] / ( d_ * d_ );
 
 }
 
@@ -57,14 +63,20 @@ void total_force_particle(int i){
 
 
 void total_force_external(int i){
+	
+	vec total_force_external = zeros(3);
+	
+	total_force_external[0] = particle_collection[i].q_ * external_E_field[0] + external_B_field[2] * particle_collection[i].v_[1];
 
-
+	total_force_external[1] = particle_collection[i].q_ * external_E_field[1] - external_B_field[2] * particle_collection[i].v_[0];
+		
+	total_force_external[2] = 0;
 
 }
 
 
 void total_force(int i){
-
-
+	
+	vec total_force = total_force_external[i] + total_force_particle[i];
 
 }
