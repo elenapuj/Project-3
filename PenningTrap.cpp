@@ -27,7 +27,7 @@ particle_collection.push_back(particle_in);
 }
 
 
-void external_E_field(vec particle_collection[i].r_ , double v0_ , double d_ ){
+void PenningTrap::external_E_field(vec particle_collection[i].r_ , double v0_ , double d_ ){
 	
 	vec external_E_field = zeros(3);
 	
@@ -40,7 +40,7 @@ void external_E_field(vec particle_collection[i].r_ , double v0_ , double d_ ){
 }
 
 
-void external_B_field(double b0_in){
+void PenningTrap::external_B_field(double b0_in){
 
 	vec external_B_field = vec(3, fill::zeros);
         external_B_field[2] = b0_in;
@@ -48,14 +48,14 @@ void external_B_field(double b0_in){
 
 }
 
-void force_particle(int i, int j){
+void PenningTrap::force_particle(int i, int j){
 
         vec force_particle = 1.38935333*pow(10,5)*particle_collection[j].q_*particle_collection[i].q_*((particle_collection[i].r_-particle_collection[j].r_)/((particle_collection[i].r_-particle_collection[j].r_)^3));
 
 }
 
 
-void total_force_particles(int i){
+void PenningTrap::total_force_particles(int i){
 
         vec total_force_particle = 0;
 
@@ -71,7 +71,7 @@ void total_force_particles(int i){
 }
 
 
-void total_force_external(int i){
+void PenningTrap::total_force_external(int i){
 	
 	vec total_force_external = zeros(3);
 	
@@ -84,7 +84,7 @@ void total_force_external(int i){
 }
 
 
-void total_force(int i){
+void PenningTrap::total_force(int i){
 	
 	vec total_force = total_force_external[i] + total_force_particle[i];
 
