@@ -55,7 +55,7 @@ void force_particle(int i, int j){
 }
 
 
-void total_force_particle(int i){
+void total_force_particles(int i){
 
         vec total_force_particle = 0;
 
