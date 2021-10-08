@@ -49,14 +49,14 @@ void external_B_field(double b0_in){
 
 void force_particle(int i, int j){
 
-        double force_particle = 1.38935333*pow(10,5)*particle_collection[j].q_*particle_collection[i].q_*((particle_collection[i].r_-particle_collection[j].r_)/((particle_collection[i].r_-particle_collection[j].r_)^3));
+        vec force_particle = 1.38935333*pow(10,5)*particle_collection[j].q_*particle_collection[i].q_*((particle_collection[i].r_-particle_collection[j].r_)/((particle_collection[i].r_-particle_collection[j].r_)^3));
 
 }
 
 
 void total_force_particle(int i){
 
-        double total_force_particle = 0;
+        vec total_force_particle = 0;
 
         for (int t = 0; t < length(particle_collection); t++){
 
