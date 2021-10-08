@@ -37,7 +37,7 @@ class PenningTrap{
           void external_E_field(vec r_);
 	  void external_B_field(double b0_in);
 	  void force_particle(int i, int j);
-	  void total_force_particle(int i);
+	  void total_force_particles(int i);
 	  void total_force_external(int i);
 	  void total_force(int i);
 
