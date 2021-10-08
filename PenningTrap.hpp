@@ -14,6 +14,13 @@ class PenningTrap{
           //First we declare the member variables
 
           double b0_, v0_, d_;
+	
+	  vec external_B_field;
+	  vec force_particle;
+	  vec total_force_particle;
+	  vec total_force_external;
+	  vec total_force;
+	
           vector<Particle> particle_collection;
 
 
