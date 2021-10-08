@@ -6,7 +6,8 @@
 //Vamo pa ello
 
 PenningTrap::PenningTrap(double b0_in, double v0_in, double d_in, vector particle_collection_in){
-
+	
+	particle_collection = particle_collection_in;
 	//We assign the introduced values to the member variables
 
 	b0_ = b0_in;
