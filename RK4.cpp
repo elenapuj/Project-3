@@ -6,15 +6,15 @@
 void evolve_RK4(double dt) {
 
 	int i;
+	vec y;
 	int tf;
-	vec t = linspace(0, tf, tf / dt);
-	vec f = total_force[i] / particle_collection[i].m_;
+	//vec t = linspace(0, tf, tf / dt);
+	vec a = total_force[i] / particle_collection[i].m_;
 
-	for (int k > 0; k++) {
-		vec k1 = dt * f[k];
-		vec k2 = dt * f(t[i] + dt / 2, y[i] + k1 / 2);
-		vec k3 = dt * f(t[i] + dt / 2, y[i] + k2 / 2);
-		vec k4 = dt * f(t[i + 1], y[i] + k3 / 2);
-		vec y[i + 1] = y[i] + (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+	int k1 = dt * a[k];
+	int k2 = dt * a(t[k] + dt / 2, y[i] + k1 / 2);
+	int k3 = dt * a(t[i] + dt / 2, y[i] + k2 / 2);
+	int k4 = dt * a(t[i + 1], y[i] + k3 / 2);
+	y[i + 1] = y[i] + (k1 + 2 * k2 + 2 * k3 + k4) / 6;
 	}
 }
