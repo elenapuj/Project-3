@@ -105,3 +105,21 @@ void PenningTrap::total_force(vec& t_f, int i){
 }
 
 
+void PenningTrap::evolve_RK4(double dt, int i) {
+	
+	vec t_f = zeros(3);
+	
+	total_force(t_f ,i);
+	
+	vec a = t_f / particle_collection[i].m_;
+
+	vec k1 = dt * a;
+	vec k2 = dt * a(t + dt / 2, y + k1 / 2);
+	vec k3 = dt * a(t + dt / 2, y + k2 / 2);
+	vec k4 = dt * a(t+dt, y + k3 / 2);
+	y = y + (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+	vec evolve_RK4 = y;
+	
+}
+
+
