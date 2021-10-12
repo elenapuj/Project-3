@@ -36,22 +36,22 @@ int main(){
 		
 		my_trap.evolve_forward_Euler(h,0);
 		
-		R.insert_cols(n, particle_collection[0].r_);
-		V.insert_cols(n, particle_collection[0].v_);
+		R.insert_cols(n, my_trap.particle_collection[0].r_);
+		V.insert_cols(n, my_trap.particle_collection[0].v_);
 
 	}
 	
-	ofstream ofile;
-        ofile.open("Problem9a_R.txt");
-	ofile << scientific;
-        ofile << R << endl;
-	ofile.close();
+	ofstream ofile1;
+        ofile1.open("Problem9a_R.txt");
+	ofile1 << scientific;
+        ofile1 << R << endl;
+	ofile1.close();
 	
-	ofstream ofile;
-	ofile.open("Problem9a_V.txt");
-        ofile << scientific;
-        ofile << V << endl;
-        ofile.close();
+	ofstream ofile2;
+	ofile2.open("Problem9a_V.txt");
+        ofile2 << scientific;
+        ofile2 << V << endl;
+        ofile2.close();
 
 	return 0;
 		
