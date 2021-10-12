@@ -6,8 +6,8 @@ int main(){
 	
 	PenningTrap my_trap( 96.5, 9.65 * pow(10 , 8), 10000 , my_particle_collection);
 		
-	vec r0 = vec(3).randn() * 0.1 * my_trap.d;  // random initial position
- 	vec v0 = vec(3).randn() * 0.1 * my_trap.d;  // random initial velocity
+	vec r0 = vec(3).randn() * 0.1 * my_trap.d_;  // random initial position
+ 	vec v0 = vec(3).randn() * 0.1 * my_trap.d_;  // random initial velocity
 	
 	Particle my_particle( 1 , 40.078 , r0 , v0);
 	
@@ -34,10 +34,10 @@ int main(){
 		
 		t = t + h;
 		
-		evolve_forward_Euler(h,1);
+		my_trap.evolve_forward_Euler(h,0);
 		
-		R.insert_cols(n, particle_collection[1].r_);
-		V.insert_cols(n, particle_collection[1].v_);
+		R.insert_cols(n, particle_collection[0].r_);
+		V.insert_cols(n, particle_collection[0].v_);
 
 	}
 	
