@@ -34,7 +34,7 @@ int main(){
 		
 		t = t + h;
 		
-		evolve_RK4(h,1);
+		evolve_forward_Euler(h,1);
 		
 		R.insert_cols(n, particle_collection[1].r_);
 		V.insert_cols(n, particle_collection[1].v_);
