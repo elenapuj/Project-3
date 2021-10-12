@@ -40,6 +40,18 @@ int main(){
 		V.insert_cols(n, particle_collection[1].v_);
 
 	}
+	
+	ofstream ofile;
+        ofile.open("Problem9a_R.txt");
+	ofile << scientific;
+        ofile << R << endl;
+	ofile.close();
+	
+	ofstream ofile;
+	ofile.open("Problem9a_V.txt");
+        ofile << scientific;
+        ofile << V << endl;
+        ofile.close();
 
 	return 0;
 		
