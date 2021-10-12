@@ -125,7 +125,7 @@ void PenningTrap::total_force(vec& t_f, int i){
 
 void PenningTrap::evolve_forward_Euler(double dt, int i) {
 
-	vec t_f = zeros(3);
+	vec t_f(3);
 
 	total_force(t_f ,i);
 
