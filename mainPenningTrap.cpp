@@ -18,12 +18,12 @@ int main(){
 
         PenningTrap prueba(5,9,7, my_particle_collection);
 
-        vec B;
-        vec f_p;
-        vec t_f_p;
-        vec t_f_e;
-        vec t_f;
-        vec E;
+        vec B(3);
+        vec f_p(3);
+        vec t_f_p(3);
+        vec t_f_e(3);
+        vec t_f(3);
+        vec E(3);
 
         prueba.add_particle(particulaprueba1);
 
