@@ -122,4 +122,48 @@ void PenningTrap::evolve_RK4(double dt, int i) {
 	
 }
 
+void PenningTrap::evolve_forward_Euler(double dt, int i) {
+	
+	vec t_f = zeros(3);
+	
+	total_force(t_f ,i);
+	
+	vec ri1 = particle_collection[i].r_ + dt * particle_collection[i].v_;
+		
+	vec vi1 = particle_collection[i].v_ + dt * t_f / particle_collection[i].m_;
+	
+	particle_collection[i].r_ = ri1;
+	
+	particle_collection[i].v_ = vi1;
+	
+}
+
+int main(){
+	
+	int h = 0.01;
+	
+	int t = 0;
+	
+	int tf = 100;
+	
+	//vec t = linspace( 0 , tf , tf/h )
+	
+	mat R = mat(3,1)
+		
+	while (t <= tf) {
+		t = t + h;
+		evolve_RK4(h);
+		mat R =  
+		V.insert_cols(1, v)
+		mat V = 
+		V.insert_cols(1, v)
+
+	}
+
+	return 0;
+		
+	
+	
+}
+
 
