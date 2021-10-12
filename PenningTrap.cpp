@@ -138,32 +138,4 @@ void PenningTrap::evolve_forward_Euler(double dt, int i) {
 	
 }
 
-int main(){
-	
-	int h = 0.01;
-	
-	int t = 0;
-	
-	int tf = 100;
-	
-	//vec t = linspace( 0 , tf , tf/h )
-	
-	mat R = mat(3,1)
-		
-	while (t <= tf) {
-		t = t + h;
-		evolve_RK4(h);
-		mat R =  
-		V.insert_cols(1, v)
-		mat V = 
-		V.insert_cols(1, v)
-
-	}
-
-	return 0;
-		
-	
-	
-}
-
 
