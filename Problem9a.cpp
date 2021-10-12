@@ -23,7 +23,7 @@ int main(){
 	
 	R << r0[0] << endr
 	  << r0[1] << endr
-	  << r0[1];
+	  << r0[2];
 	V << v0[0] << endr
 	  << v0[1] << endr
 	  << v0[2];
