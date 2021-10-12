@@ -11,7 +11,7 @@ int main(){
 	
 	Particle my_particle( 1 , 40.078 , r0 , v0);
 	
-	int h = 0.1; //stepsize
+	double h = 0.1; //stepsize
 	
 	int t = 0; //initial time
 	
