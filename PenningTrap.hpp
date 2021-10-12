@@ -33,6 +33,7 @@ class PenningTrap{
 	  void total_force_particle(vec& t_f_p, int i);
 	  void total_force_external(vec& t_f_e, int i);
 	  void total_force(vec& t_f, int i);
+	  void evolve_forward_Euler(double dt, int i);
 
 };
 
