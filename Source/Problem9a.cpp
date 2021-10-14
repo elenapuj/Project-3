@@ -47,13 +47,13 @@ int main(){
 	ofstream ofile1;
         ofile1.open("Problem9a_R.txt");
 	ofile1 << scientific;
-        ofile1 << R << endl;
+        ofile1 << R.t << endl;
 	ofile1.close();
 
 	ofstream ofile2;
 	ofile2.open("Problem9a_V.txt");
         ofile2 << scientific;
-        ofile2 << V << endl;
+        ofile2 << V.t << endl;
         ofile2.close();
 
 	return 0;
