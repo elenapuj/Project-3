@@ -85,7 +85,7 @@ void PenningTrap::total_force_external(vec& t_f_e, int i){
 
 	t_f_e[1] = particle_collection[i].q_ * ( E[1] - B[2] * particle_collection[i].v_[0] );
 
-	t_f_e[2] = 0;
+	t_f_e[2] = particle_collection[i].q_ * E[2];
 
 }
 
