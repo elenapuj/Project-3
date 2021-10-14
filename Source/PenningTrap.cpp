@@ -22,7 +22,7 @@ PenningTrap::PenningTrap(double b0_in, double v0_in, double d_in, vector<Particl
 
 void PenningTrap::add_particle(Particle particle_in){
 
-particle_collection.push_back(particle_in);
+	particle_collection.push_back(particle_in);
 
 }
 
