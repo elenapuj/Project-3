@@ -130,23 +130,21 @@ void PenningTrap::evolve_RK4(double dt, int i){
 	vec a = t_f / particle_collection[i].m_;
 
 
-	vec K1r = v_old * dt;
+	vec K1r = particle_collection[i].v_ * dt;
 	vec K1v = a * dt;
 
 
 	particle_collection[i].r_ = r_old + K1r / 2;
 	particle_collection[i].v_ = v_old + K1v / 2;
 
-
-	r_old = particle_collection[i].r_;
-        v_old = particle_collection[i].v_;
+	
 
         total_force(t_f, i);
 
         a = t_f / particle_collection[i].m_;
 
 
-        vec K2r = v_old * dt;
+        vec K2r = particle_collection[i].v_ * dt;
         vec K2v = a * dt;
 
 
@@ -154,36 +152,31 @@ void PenningTrap::evolve_RK4(double dt, int i){
         particle_collection[i].v_ = v_old + K2v / 2;
 
 
-	r_old = particle_collection[i].r_;
-        v_old = particle_collection[i].v_;
-
         total_force(t_f, i);
 
         a = t_f / particle_collection[i].m_;
 
 
-        vec K3r = v_old * dt;
+        vec K3r = particle_collection[i].v_ * dt;
         vec K3v = a * dt;
 
 
-        particle_collection[i].r_ = r_old + K3r / 2;
-        particle_collection[i].v_ = v_old + K3v / 2;
+        particle_collection[i].r_ = r_old + K3r;
+        particle_collection[i].v_ = v_old + K3v;
 
 
-	r_old = particle_collection[i].r_;
-        v_old = particle_collection[i].v_;
 
         total_force(t_f, i);
 
         a = t_f / particle_collection[i].m_;
 
 
-        vec K4r = v_old * dt;
+        vec K4r = particle_collection[i].v_ * dt;
         vec K4v = a * dt;
 
 
-	particle_collection[i].r_ = particle_collection[i].r_ + ( K1r + 2*( K2r + K3r ) + K4r ) / 6;
+	particle_collection[i].r_ = r_old + ( K1r + 2*( K2r + K3r ) + K4r ) / 6;
 
-	particle_collection[i].v_ = particle_collection[i].v_ + ( K1v + 2*( K2v + K3v ) + K4v ) / 6;
+	particle_collection[i].v_ = v_old + ( K1v + 2*( K2v + K3v ) + K4v ) / 6;
 
 }
