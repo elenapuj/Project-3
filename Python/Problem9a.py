@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from typing import List
 
-with  open('Problem9a_R.txt', "r") as  infile:
+with  open('Problem9a_Rrk.txt', "r") as  infile:
     
     lines = infile.readlines ()
 
@@ -23,7 +23,7 @@ with  open('Problem9a_R.txt', "r") as  infile:
         y.append(float(vals [1]))
         z.append(float(vals [2]))
         
-with  open('Problem9a_V.txt', "r") as  infile:
+with  open('Problem9a_Vrk.txt', "r") as  infile:
     lines = infile.readlines ()
 
     vx: List[float] = []
