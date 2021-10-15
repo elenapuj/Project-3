@@ -38,7 +38,7 @@ with  open('Problem9a_V.txt', "r") as  infile:
         
 h = 0.1
 tf = 100        
-t = np.linspace(0 , tf, 1000 )
+t = np.linspace(0 , tf, 1002 )
 plt.plot(t, z)
 plt.title("Motion of one particle in the z direction vs time", fontsize=10)
 plt.ylabel("z (μm)" )
