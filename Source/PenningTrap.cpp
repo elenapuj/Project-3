@@ -265,14 +265,13 @@ void PenningTrap::evolve_RK4(double dt, int i, double t, double f, double w, boo
 	
 void PenningTrap::number_particles_inside(){
 	
-	int number_inside = 0
+	int number_inside = 0;
 	
 	for ( int e = 1; e <= particle_collection.size(); e++ ){
-			
-			
+						
 		if ( norm(particle_collection[e].r_) < d_){
 			
-			number_inside++
+			number_inside++;
 			
 		}
 	}
