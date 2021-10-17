@@ -27,13 +27,27 @@ particle_collection.push_back(particle_in);
 }
 
 
-void PenningTrap::external_E_field(vec& E, int i){
+void PenningTrap::external_E_field(vec& E, int i, double t, double f, double w, bool time_dependence){
 
-	E[0] = v0_ * particle_collection[i].r_[0]  / ( d_ * d_ );
+	if (time_dependence){
 
-	E[1] =  v0_ * particle_collection[i].r_[1] / ( d_ * d_ );
+		E[0] = v0_ * ( 1 + f * cos( w * t ) ) *  particle_collection[i].r_[0]  / ( d_ * d_ );
 
-	E[2] =  - v0_ * 2 * particle_collection[i].r_[2] / ( d_ * d_ );
+                E[1] =  v0_ * particle_collection[i].r_[1] / ( d_ * d_ );
+
+                E[2] =  - v0_ * 2 * particle_collection[i].r_[2] / ( d_ * d_ );
+
+	}
+
+	else{
+
+		E[0] = v0_ * particle_collection[i].r_[0]  / ( d_ * d_ );
+
+		E[1] =  v0_ * particle_collection[i].r_[1] / ( d_ * d_ );
+
+		E[2] =  - v0_ * 2 * particle_collection[i].r_[2] / ( d_ * d_ );
+
+	}
 
 }
 
@@ -71,11 +85,11 @@ void PenningTrap::total_force_particle(vec& t_f_p, int i){
 }
 
 
-void PenningTrap::total_force_external(vec& t_f_e, int i){
+void PenningTrap::total_force_external(vec& t_f_e, int i, double t, double f, double w, bool time_dependence){
 
 	vec E(3);
 
-	external_E_field(E, i);
+	external_E_field(E, i, t, f, w, time_dependence);
 
 	t_f_e[0] = particle_collection[i].q_ * ( E[0] + b0_ * particle_collection[i].v_[1] );
 
@@ -86,26 +100,95 @@ void PenningTrap::total_force_external(vec& t_f_e, int i){
 }
 
 
-void PenningTrap::total_force(vec& t_f, int i){
+void PenningTrap::total_force(vec& t_f, int i, double t, double f, double w, bool null_exterior, bool time_dependence, bool coulomb){
 
-	vec t_f_e(3);
+	if (null_exterior){
 
-	total_force_external(t_f_e, i);
+		if( norm(particle_collection[i].r_) < d ){
 
-	vec t_f_p = zeros(3);
+			if (coulomb){
 
-	total_force_particle(t_f_p, i);
+                        	vec t_f_e(3);
 
-	t_f = t_f_e + t_f_p;
+                        	total_force_external(t_f_e, i, t, f, w, time_dependence);
+
+                        	vec t_f_p = zeros(3);
+
+                        	total_force_particle(t_f_p, i);
+
+                        	t_f = t_f_e + t_f_p;
+
+                	}
+
+                	else{
+
+                        	vec t_f_e(3);
+
+                        	total_force_external(t_f_e, i, t, f, w, time_dependence);
+
+                        	t_f = t_f_e;
+
+                	}
+
+
+		else{
+
+			if (coulomb){
+
+                                vec t_f_p = zeros(3);
+
+                                total_force_particle(t_f_p, i);
+
+                                t_f = t_f_p;
+
+                        }
+
+                        else{
+
+                                t_f = zeros(3);
+
+                        }
+
+		}
+
+
+	else{
+
+
+		if (coulomb){
+
+			vec t_f_e(3);
+
+			total_force_external(t_f_e, i, t, f, w, time_dependence);
+
+			vec t_f_p = zeros(3);
+
+			total_force_particle(t_f_p, i);
+
+			t_f = t_f_e + t_f_p;
+
+		}
+
+		else{
+
+			vec t_f_e(3);
+
+                        total_force_external(t_f_e, i, t, f, w, time_dependence);
+
+			t_f = t_f_e;
+
+		}
+
+	}
 
 }
 
 
-void PenningTrap::evolve_forward_Euler(double dt, int i) {
+void PenningTrap::evolve_forward_Euler(double dt, int i, double t, double f, double w, bool null_exterior, bool time_dependence, bool coulomb) {
 
 	vec t_f(3);
 
-	total_force(t_f, i);
+	total_force(t_f, i, t, f, w, null_exterior, time_dependence, coulomb);
 
 	vec v_new = particle_collection[i].v_ + dt * t_f / particle_collection[i].m_;
 
@@ -130,14 +213,13 @@ void PenningTrap::evolve_RK4(double dt, int i){
 	vec a = t_f / particle_collection[i].m_;
 
 
-	vec K1r = particle_collection[i].v_ * dt;
+	vec K1r = v_old * dt;
 	vec K1v = a * dt;
 
 
 	particle_collection[i].r_ = r_old + K1r / 2;
 	particle_collection[i].v_ = v_old + K1v / 2;
 
-	
 
         total_force(t_f, i);
 
@@ -163,7 +245,6 @@ void PenningTrap::evolve_RK4(double dt, int i){
 
         particle_collection[i].r_ = r_old + K3r;
         particle_collection[i].v_ = v_old + K3v;
-
 
 
         total_force(t_f, i);
