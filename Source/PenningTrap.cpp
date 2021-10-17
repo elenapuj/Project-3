@@ -201,14 +201,14 @@ void PenningTrap::evolve_forward_Euler(double dt, int i, double t, double f, dou
 }
 
 
-void PenningTrap::evolve_RK4(double dt, int i){
+void PenningTrap::evolve_RK4(double dt, int i, double t, double f, double w, bool null_exterior, bool time_dependance, bool coulomb){
 
 	vec r_old = particle_collection[i].r_;
 	vec v_old = particle_collection[i].v_;
 
 	vec t_f(3);
 
-	total_force(t_f, i);
+	total_force(t_f, i, t, f, w, null_exterior, time_dependance, coulomb);
 
 	vec a = t_f / particle_collection[i].m_;
 
@@ -221,7 +221,7 @@ void PenningTrap::evolve_RK4(double dt, int i){
 	particle_collection[i].v_ = v_old + K1v / 2;
 
 
-        total_force(t_f, i);
+        total_force(t_f, i, t + dt/2, f, w, null_exterior, time_dependance, coulomb);
 
         a = t_f / particle_collection[i].m_;
 
@@ -233,8 +233,7 @@ void PenningTrap::evolve_RK4(double dt, int i){
         particle_collection[i].r_ = r_old + K2r / 2;
         particle_collection[i].v_ = v_old + K2v / 2;
 
-
-        total_force(t_f, i);
+        total_force(t_f, i, t + dt/2, f, w, null_exterior, time_dependance, coulomb);
 
         a = t_f / particle_collection[i].m_;
 
@@ -247,7 +246,7 @@ void PenningTrap::evolve_RK4(double dt, int i){
         particle_collection[i].v_ = v_old + K3v;
 
 
-        total_force(t_f, i);
+        total_force(t_f, i, t + dt, f, w, null_exterior, time_dependance, coulomb);
 
         a = t_f / particle_collection[i].m_;
 

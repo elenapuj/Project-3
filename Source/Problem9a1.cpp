@@ -20,7 +20,7 @@ int main(){
 
         double tf = 100; //final time
 
-        int n = 0;
+        int n = 1;
 
         mat Rrk, Vrk;
 
@@ -33,16 +33,17 @@ int main(){
             << v0[2];
 
 
-	while (t <= tf) {
+	while (t <= tf){
 
-                n++;
-
-                t = t + h;
-
-                my_trap.evolve_RK4(h,0);
+                my_trap.evolve_RK4(h, 0, t, f, w, true, false, true);
 
                 Rrk.insert_cols(n, my_trap.particle_collection[0].r_);
                 Vrk.insert_cols(n, my_trap.particle_collection[0].v_);
+
+		n++;
+
+                t = t + h;
+
 
         }
 

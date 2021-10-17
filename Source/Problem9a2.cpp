@@ -19,7 +19,7 @@ int main(){
 
 	double tf = 100; //final time
 
-	int n = 0;
+	int n = 1;
 
 	mat Re, Ve;
 
@@ -34,14 +34,14 @@ int main(){
 
 	while (t <= tf) {
 
-		n++;
-
-		t = t + h;
-
-		my_trap.evolve_forward_Euler(h,0);
+		my_trap.evolve_forward_Euler(h, 0, t, f, w, true, false, true);
 
 		Re.insert_cols(n, my_trap.particle_collection[0].r_);
 		Ve.insert_cols(n, my_trap.particle_collection[0].v_);
+
+		t = t + h;
+
+		n++;
 
 	}
 
