@@ -262,5 +262,20 @@ void PenningTrap::evolve_RK4(double dt, int i, double t, double f, double w, boo
 	particle_collection[i].r_ = r_old + ( K1r + 2*( K2r + K3r ) + K4r ) / 6;
 
 	particle_collection[i].v_ = v_old + ( K1v + 2*( K2v + K3v ) + K4v ) / 6;
-
+	
+void PenningTrap::number_particles_inside(){
+	
+	int number_inside = 0
+	
+	for ( int e = 1; e <= particle_collection.size(); e++ ){
+			
+			
+		if ( norm(particle_collection[e].r_) < d_){
+			
+			number_inside++
+			
+		}
+	}
+		
+		
 }
