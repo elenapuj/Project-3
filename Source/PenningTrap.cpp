@@ -104,7 +104,7 @@ void PenningTrap::total_force(vec& t_f, int i, double t, double f, double w, boo
 
 	if (null_exterior){
 
-		if( norm(particle_collection[i].r_) < d ){
+		if( norm(particle_collection[i].r_) < d_ ){
 
 			if (coulomb){
 
@@ -130,6 +130,8 @@ void PenningTrap::total_force(vec& t_f, int i, double t, double f, double w, boo
 
                 	}
 
+		}
+
 
 		else{
 
@@ -150,6 +152,8 @@ void PenningTrap::total_force(vec& t_f, int i, double t, double f, double w, boo
                         }
 
 		}
+
+	}
 
 
 	else{

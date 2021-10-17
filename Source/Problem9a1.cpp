@@ -14,6 +14,10 @@ int main(){
 
         my_trap.add_particle(my_particle);
 
+	double f = 0;
+
+	double w = 0;
+
         double h = 0.1; //stepsize
 
         double t = 0; //initial time
