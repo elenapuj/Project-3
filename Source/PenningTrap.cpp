@@ -30,7 +30,7 @@ void PenningTrap::add_n_particles(int n , Particle particle_in ){
 	
 	for (int i = 1; i <= n; i++){
             
-		add_particle(new_particle);
+		add_particle(particle_in);
 		
       }
 
