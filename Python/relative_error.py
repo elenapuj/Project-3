@@ -11,15 +11,15 @@ from typing import List
 
 # Data
 
-q = 1
+q = 1 # Charge
 
-b_0 = 96.5
+b_0 = 96.5 # Magnetic field
 
-m = 40.078
+m = 40.078 # Mass
 
-v_0 = 9.65e8
+v_0 = 9.65e8 # Potential
 
-d =  10000
+d =  10000 # Size of the box
 
 # Initial values 
 
@@ -44,7 +44,7 @@ Ap = ( v_0 + wl * x_0 ) / (wl - wp )
 Al =  ( v_0 + wp * x_0 ) / (wl - wp )
 
 
-# Simulated values
+# Simulated values for different stepsizes
 
 textnames = ['Rel_error_h1.txt' , 'Rel_error_h2.txt' , 'Rel_error_h3.txt' , 
              
@@ -96,7 +96,7 @@ for i in  range(0 , 4):
     
     max_error.append( max_error_i )
     
-    # Graph
+    # Graphs
             
     plt.plot(t, r_e, label="h=" + h_name[i])
     
