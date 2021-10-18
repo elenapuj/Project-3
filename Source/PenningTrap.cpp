@@ -26,6 +26,17 @@ particle_collection.push_back(particle_in);
 
 }
 
+void PenningTrap::add_n_particles(int n , Particle particle_in ){
+	
+	for (int i = 1; i <= n; i++){
+            
+		add_particle(new_particle);
+		
+      }
+
+
+}
+
 
 void PenningTrap::external_E_field(vec& E, int i, double t, double f, double w, bool time_dependence){
 
