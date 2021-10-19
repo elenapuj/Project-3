@@ -1,17 +1,20 @@
 #include "PenningTrap.hpp"
 
-
+//Main program
 int main(){
 
         vector<Particle> my_particle_collection;
-
+	
+	//We create an specific trap by calling the PenningTrap constructor
         PenningTrap my_trap( 96.5, 9.65 * pow(10 , 8), 10000 , my_particle_collection);
 
         vec r0 = vec(3).randn() * 0.1 * my_trap.d_;  // random initial position
         vec v0 = vec(3).randn() * 0.1 * my_trap.d_;  // random initial velocity
 
+	//We create a particle by calling the Particle constructor
         Particle my_particle( 1 , 40.078 , r0 , v0);
-
+	
+	//Here we add the particle mentioned before in the specific Penning trap
         my_trap.add_particle(my_particle);
 
 	double f = 0;
@@ -26,6 +29,7 @@ int main(){
 
         int n = 1;
 
+	//We define two matrices that will contain the three components of the velocity and position of the particle
         mat Rrk, Vrk;
 
         Rrk << r0[0] << endr
@@ -36,11 +40,12 @@ int main(){
             << v0[1] << endr
             << v0[2];
 
-
+	//With this loop, while the time is below the final time defined, the Runge Kutta algorithm will evolve the Penning Trap system in time
 	while (t <= tf){
 
                 my_trap.evolve_RK4(h, 0, t, f, w, true, false, true);
-
+		
+		//We insert in the matrices previously defined the different values of the position and velocity, values calculated thanks to the Runge Kutta method
                 Rrk.insert_cols(n, my_trap.particle_collection[0].r_);
                 Vrk.insert_cols(n, my_trap.particle_collection[0].v_);
 
@@ -51,7 +56,7 @@ int main(){
 
         }
 
-
+	//We create two .txt files that stores  respectively the matrices that contains the values of the position and velocity of the particle
 	ofstream ofile1;
         ofile1.open("Problem9a_Rrk.txt");
         ofile1 << scientific;
