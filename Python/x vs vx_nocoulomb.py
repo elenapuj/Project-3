@@ -1,17 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 19 19:17:45 2021
-
-@author: María Pérez
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 19 19:17:05 2021
-
-@author: María Pérez
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import List
