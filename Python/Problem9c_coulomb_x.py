@@ -11,7 +11,7 @@ from typing import List
 
 """
 The code opens two data files, creates three vectors for each file, and fills them with the three 
-components of the position of each particle when the Coulomb interactions are switched off
+components of the position of each particle when the Coulomb interactions are switched on
 """
 with  open('Coulomb_r1.txt', "r") as  infile:
     
