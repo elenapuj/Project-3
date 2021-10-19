@@ -113,11 +113,13 @@ void PenningTrap::total_force_external(vec& t_f_e, int i, double t, double f, do
 
 //Method that calculates the sum of all forces
 void PenningTrap::total_force(vec& t_f, int i, double t, double f, double w, bool null_exterior, bool time_dependence, bool coulomb){
+	
 	//The calculation of the sum of all forces depends on wether the external fields E and B are zero or not
 	if (null_exterior){
 
 		if( norm(particle_collection[i].r_) < d_ ){
-			//The caclutation of the total force also depends if the Coulomb interactions are taking or not into account
+			
+			//The calculation of the total force also depends if the Coulomb interactions are taking or not into account
 			if (coulomb){
 
                         	vec t_f_e(3);
