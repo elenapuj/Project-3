@@ -36,7 +36,7 @@ class PenningTrap{
 	  void total_force(vec& t_f, int i, double t, double f, double w, bool null_exterior, bool time_dependence, bool coulomb);
 	  void evolve_forward_Euler(double dt, int i, double t, double f, double w, bool null_exterior, bool time_dependence, bool coulomb);
 	  void evolve_RK4(double dt, int i, double t, double f, double w, bool null_exterior, bool time_dependence, bool coulomb);
-	  void number_particles_inside();
+	  int number_particles_inside();
 
 };
 
