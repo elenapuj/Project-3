@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 12 14:24:04 2021
-
-@author: julianeltoro
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import List
