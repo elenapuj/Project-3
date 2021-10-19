@@ -1,6 +1,6 @@
 #include "PenningTrap.hpp"
 
-//Here we will generate data for the position and velocity of a single particle in the Penning Trap
+//Here we will generate data for the position and velocity of a single particle in the Penning Trap using the Runge-Kutta 4 method
 
 int main(){
 	
