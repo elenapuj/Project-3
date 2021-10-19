@@ -1,32 +1,46 @@
 #include "PenningTrap.hpp"
 
+
+//Here we will generate data for the position and velocity of a single particle in the Penning Trap using the Forward Euler method
+
 int main(){
 	
 	//The PenningTrap holds a collection of particle
+	
 	vector<Particle> my_particle_collection;
 
+	
 	//We create an specific trap by calling the PenningTrap constructor
+	
 	PenningTrap my_trap( 96.5, 9.65 * pow(10 , 8), 10000 , my_particle_collection);
+	
+	
+	
+	
+	double f = 0;  
+
+	double w = 0;
+
+	double h = 0.1; //Stepsize
+
+	double t = 0; //Initial time
+
+	double tf = 100; //Final time
 
 	vec r0 = vec(3).randn() * 0.1 * my_trap.d_;  // random initial position
  	vec v0 = vec(3).randn() * 0.1 * my_trap.d_;  // random initial velocity
 
+	
 	//We create a particle by calling the Particle constructor
+	
 	Particle my_particle( 1 , 40.078 , r0 , v0);
 
+	
 	//Here we add the particle mentioned before in the specific Penning trap
+	
 	my_trap.add_particle(my_particle);
 
-	double f = 0;
-
-	double w = 0;
-
-	double h = 0.1; //stepsize
-
-	double t = 0; //initial time
-
-	double tf = 100; //final time
-
+	
 	int n = 1;
 	
 	//We define two matrices that will contain the three components of the velocity and position of the particle
