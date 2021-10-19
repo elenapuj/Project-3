@@ -33,6 +33,7 @@ int main(){
 	//We define two matrices that will contain the three components of the velocity and position of the particle
         mat Rrk, Vrk;
 
+	//Now we fill this matrices with the initial values of the position and the velocity
         Rrk << r0[0] << endr
             << r0[1] << endr
             << r0[2];
