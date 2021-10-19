@@ -2,7 +2,8 @@
 
 //Main program
 int main(){
-
+	
+	//The PenningTrap holds a collection of particles
         vector<Particle> my_particle_collection;
 	
 	//We create an specific trap by calling the PenningTrap constructor
