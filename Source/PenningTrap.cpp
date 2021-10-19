@@ -286,7 +286,7 @@ int PenningTrap::number_particles_inside(){
 
 	int number_inside = 0;
 
-	for (int e = 1; e <= particle_collection.size(); e++) {
+	for (int e = 0; e < particle_collection.size(); e++) {
 
 		if (norm(particle_collection[e].r_) < d_) {
 
