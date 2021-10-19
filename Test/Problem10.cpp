@@ -1,6 +1,6 @@
 
 #include "PenningTrap.hpp"
-#include "PenningTrap.cpp"
+
 
 int main() {
 
