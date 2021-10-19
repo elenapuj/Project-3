@@ -279,7 +279,7 @@ void PenningTrap::evolve_RK4(double dt, int i, double t, double f, double w, boo
 
 	particle_collection[i].v_ = v_old + ( K1v + 2*( K2v + K3v ) + K4v ) / 6;
 
-//Method that
+}
 
 	//Method that
 int PenningTrap::number_particles_inside(){
