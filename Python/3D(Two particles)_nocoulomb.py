@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Oct 19 20:20:27 2021
-
-@author: María Pérez
-"""
-
 from mpl_toolkits import mplot3d
 #matplotlib inline
 import numpy as np
