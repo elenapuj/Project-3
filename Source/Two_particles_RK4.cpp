@@ -29,12 +29,15 @@ int main(){
 
 	int N = 2;  //Number of particles
 
-	vec r0 = vec(3).randu() * 0.1 * my_trap.d_;
-	vec v0 = vec(3).randu() * 0.1 * my_trap.d_;
+	vec r01 = vec(3).randu() * 0.1 * my_trap.d_;
+	vec v01 = vec(3).randu() * 0.1 * my_trap.d_;
+	
+	vec r02 = vec(3).randu() * 0.1 * my_trap.d_;
+	vec v012= vec(3).randu() * 0.1 * my_trap.d_;
 
 
-        Particle my_particle1( 1 , 40.078 , r0 , v0);
-	Particle my_particle2( 1 , 40.078 , r0 , v0);
+        Particle my_particle1( 1 , 40.078 , r01 , v01);
+	Particle my_particle2( 1 , 40.078 , r02 , v02);
 
         my_trap.add_particle(my_particle1);
 	my_trap.add_particle(my_particle2);
