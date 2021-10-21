@@ -27,8 +27,8 @@ class PenningTrap{
           //Finally, we declare some methods for calculating some important things
 
 	  void add_particle(Particle p_in);
-	  void add_n_particles(int n , Particle p_in);	
-          void external_E_field(vec& E, int i, double t, double f, double w, bool time_dependence);
+	  void add_n_particles(int n, int q, double m, int d);
+	  void external_E_field(vec& E, int i, double t, double f, double w, bool time_dependence);
 	  void external_B_field(vec& B);
 	  void force_particle(vec& f_p, int i, int j);
 	  void total_force_particle(vec& t_f_p, int i);
@@ -36,7 +36,7 @@ class PenningTrap{
 	  void total_force(vec& t_f, int i, double t, double f, double w, bool null_exterior, bool time_dependence, bool coulomb);
 	  void evolve_forward_Euler(double dt, int i, double t, double f, double w, bool null_exterior, bool time_dependence, bool coulomb);
 	  void evolve_RK4(double dt, int i, double t, double f, double w, bool null_exterior, bool time_dependence, bool coulomb);
-	  int number_particles_inside();
+	  double number_particles_inside();
 
 };
 
