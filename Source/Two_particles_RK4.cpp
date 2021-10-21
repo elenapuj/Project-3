@@ -33,7 +33,7 @@ int main(){
 	vec v01 = vec(3).randu() * 0.1 * my_trap.d_;
 	
 	vec r02 = vec(3).randu() * 0.1 * my_trap.d_;
-	vec v012= vec(3).randu() * 0.1 * my_trap.d_;
+	vec v02= vec(3).randu() * 0.1 * my_trap.d_;
 
 
         Particle my_particle1( 1 , 40.078 , r01 , v01);
