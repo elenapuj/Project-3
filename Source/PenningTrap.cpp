@@ -31,9 +31,6 @@ void PenningTrap::add_n_particles(int n , int q, double m , int d ) {
 
 	for (int i = 1; i <= n; i++) {
 
-		vec r0 = vec(3).randn() * 0.1 * d;  //Random initial position
-		vec v0 = vec(3).randn() * 0.1 * d;  //Random initial velocity
-
 		Particle particle_in(q, m, vec(3).randn() * 0.1 * d, vec(3).randn() * 0.1 * d);
 
 		add_particle(particle_in);
