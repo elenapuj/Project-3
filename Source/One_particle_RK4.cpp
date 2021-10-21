@@ -59,7 +59,7 @@ int main(){
 	
 	//We now define a counter for the step
 	
-	int n = 1
+	int n = 1;
 	
 	
 	//With this loop, while the time is below the final time defined, the Runge Kutta algorithm will evolve the Penning Trap system in time
