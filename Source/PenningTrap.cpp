@@ -283,9 +283,9 @@ void PenningTrap::evolve_RK4(double dt, int i, double t, double f, double w, boo
 }
 
 	//Method that
-int PenningTrap::number_particles_inside(){
+double PenningTrap::number_particles_inside(){
 
-	int number_inside = 0;
+	double number_inside = 0;
 
 	for (int e = 0; e < particle_collection.size(); e++) {
 
