@@ -79,7 +79,7 @@ plt.savefig("Problem_9d_plot_coulomb1.pdf")
 
 plt.figure()
 ax = plt.axes(projection='3d')
-ax.scatter3D(x_2, y_2, z_2, c=z_2, cmap='Greens')
+ax.scatter3D(x_2, y_2, z_2, c=z_2, cmap='Blues')
 plt.plot(x_2, y_2, z_2, color = 'blue', label = 'Trajectory of the particle 2')
 ax.plot(x_2, y_2, z_2, color = 'blue')
 plt.legend(loc = "lower left")
