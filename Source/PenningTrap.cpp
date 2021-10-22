@@ -39,6 +39,19 @@ void PenningTrap::add_n_particles(double n , int q, double m , int d ) {
 
 }
 
+void PenningTrap::randomize_r_and_v(double N , int d) {
+
+
+	for (int l = 0; l < N; l++) {
+
+		particle_collection[l].r_ = vec(3).randn() * 0.1 * d;
+
+		particle_collection[l].v_ = vec(3).randn() * 0.1 * d;
+
+	}
+
+}
+
 //Method that calculates the external electric field
 void PenningTrap::external_E_field(vec& E, int i, double t, double f, double w, bool time_dependence) {
 
