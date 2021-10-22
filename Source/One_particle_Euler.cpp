@@ -87,13 +87,13 @@ int main(){
 	//We create two .txt files that stores respectively the matrices that contains the values of the position and velocity of the particle
 	
 	ofstream ofile1;
-        ofile1.open("Problem9a_Re.txt");
+        ofile1.open("Problem9a_Rfe.txt");
 	ofile1 << scientific;
         ofile1 << Re.t() << endl;
 	ofile1.close();
 
 	ofstream ofile2;
-	ofile2.open("Problem9a_Ve.txt");
+	ofile2.open("Problem9a_Vfe.txt");
         ofile2 << scientific;
         ofile2 << Ve.t() << endl;
         ofile2.close();
