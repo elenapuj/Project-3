@@ -28,6 +28,7 @@ public:
 
 	void add_particle(Particle p_in);
 	void add_n_particles(double n, int q, double m, int d);
+	void randomize_r_and_v(double N, int d);
 	void external_E_field(vec& E, int i, double t, double f, double w, bool time_dependence);
 	void external_B_field(vec& B);
 	void force_particle(vec& f_p, int i, int j);
