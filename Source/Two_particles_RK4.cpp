@@ -18,7 +18,7 @@ int main(){
 
         double w = 0;  //Same as f
 
-        double h = 0.1;  //Stepsize
+        double h = 0.01;  //Stepsize
 
         double t = 0;  //Initial time
 
