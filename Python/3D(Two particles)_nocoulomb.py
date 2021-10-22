@@ -67,15 +67,15 @@ with  open('NoCoulomb_v2.txt', "r") as  infile:
 
 plt.figure()
 ax = plt.axes(projection='3d')
-ax.scatter3D(x_1, y_1, z_1, c=z_1, cmap='Greens')
-plt.plot(x_1, y_1, z_1, color = 'green', label = 'Trajectory of the particle 1')
-ax.plot(x_1, y_1, z_1, color = 'green')
+ax.scatter3D(x_1, y_1, z_1, c=z_1, cmap='Reds')
+plt.plot(x_1, y_1, z_1, color = 'red', label = 'Trajectory of the particle 1')
+ax.plot(x_1, y_1, z_1, color = 'red')
 plt.legend(loc = "lower left")
 plt.xlabel("x (μm)")
 plt.ylabel("y (μm)")
 plt.grid(True)
 
-plt.savefig("Problem_9d_plot_nocoulomb1.pdf")
+plt.savefig("3D(Two particles)_nocoulomb_1.pdf")
 
 plt.figure()
 ax = plt.axes(projection='3d')
@@ -88,4 +88,4 @@ plt.ylabel("y (μm)")
 plt.grid(True)
 
 #The graph is saved in a PDF file
-plt.savefig("Problem_9d_plot_nocoulomb2.pdf")
+plt.savefig("3D(Two particles)_nocoulomb_2.pdf")
