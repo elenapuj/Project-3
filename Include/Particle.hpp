@@ -14,28 +14,28 @@ using namespace arma;
 using namespace std;
 
 
-class Particle{
+class Particle {
 
-	public:
+public:
 
-	  //First we declare the member variables
+	//First we declare the member variables
 
-	  double q_, m_;
-	  vec r_, v_;
-
-
-	  //Then, we declare also the constructor
-
-	  Particle(double q_in, double m_in, vec r_in, vec v_in);
+	double q_, m_;
+	vec r_, v_;
 
 
-	  //Finally, we declare some methods so we are able to print everything later if needed
+	//Then, we declare also the constructor
 
-	  void q();
-	  void m();
-	  void r();
-	  void v();
-	  void info();
+	Particle(double q_in, double m_in, vec r_in, vec v_in);
+
+
+	//Finally, we declare some methods so we are able to print everything later if needed
+
+	void q();
+	void m();
+	void r();
+	void v();
+	void info();
 
 };
 
