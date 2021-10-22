@@ -38,16 +38,16 @@ plt.plot(x_1, y_1, color = 'red', label = 'Motion of the particle 1 in the x-y p
 plt.legend(loc = "lower left")
 plt.ylabel("y (μm)")
 plt.xlabel("x (μm)")
-plt.xlim([-2500, 2500])
-plt.ylim([-2500, 2500])
+plt.xlim([-200, 200])
+plt.ylim([-200, 200])
 plt.grid(True)
 
 plt.plot(x_2, y_2, color = 'blue', label = 'Motion of the particle 2 in the x-y plane')
 plt.legend(loc = "lower left")
 plt.ylabel("y (μm)")
 plt.xlabel("x (μm)")
-plt.xlim([-2500, 2500])
-plt.ylim([-2500, 2500])
+plt.xlim([-200, 200])
+plt.ylim([-200, 200])
 plt.grid(True)
 
 #The graph is saved in a PDF file
