@@ -15,7 +15,7 @@ int main() {
 
 	//Number of particles
 
-	double N = 3;
+	double N = 100;
 
 	//We add N particles with random initial conditions
 
@@ -65,18 +65,8 @@ int main() {
 
 			fraction[g] = my_trap.number_particles_inside() / N;
 
-			/*
+			my_trap.randomize_r_and_v(N ,500);
 			
-			for (int l = 0; l < N; l++) {
-
-				my_particle_collection[l].r_ = vec(3).randn() * 0.1 * 500;
-
-				my_particle_collection[l].v_ = vec(3).randn() * 0.1 * 500;
-
-			}
-			*/
-
-		
 
 
 			//my_trap.add_n_particles(N, 1, 40.078, 500);
