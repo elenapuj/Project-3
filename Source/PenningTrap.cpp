@@ -75,7 +75,13 @@ void PenningTrap::external_B_field(vec& B) {
 //Method that calculates the force between two particles, i.e. the Coulomb force 
 void PenningTrap::force_particle(vec& f_p, int i, int j) {
 
-	f_p = 1.38935333 * pow(10, 5) * particle_collection[j].q_ * particle_collection[i].q_ * (particle_collection[i].r_ - particle_collection[j].r_) / (pow(norm(particle_collection[i].r_ - particle_collection[j].r_), 3));
+	vec dr = particle_collection[i].r_ - particle_collection[j].r_;
+
+	double dr_norm = pow(arma::norm(dr), 3);
+
+	vec dr_ = dr / dr_norm;
+
+	f_p = 1.38935333 * pow(10, 5) * particle_collection[j].q_ * particle_collection[i].q_ * dr_;
 
 }
 
