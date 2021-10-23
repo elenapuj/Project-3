@@ -51,4 +51,4 @@ plt.ylim([-210, 210])
 plt.grid(True)
 
 #The graph is saved in a PDF file
-plt.savefig("Problem_9b_plot_nocoulomb.pdf")
+plt.savefig("x vs y NoCoulomb.pdf")
