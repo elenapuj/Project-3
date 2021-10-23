@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from typing import List
 
 """
-The code opens two data files, creates three vectors for each file, and fills them with the three 
-components of the position of each particle when the Coulomb interactions are switched off
+We open four data files, create three vectors for each file, and fill them with the three 
+components of the position or velocity of each of the two particles when the Coulomb interactions are switched off
 """
 
 with  open('NoCoulomb_r1.txt', "r") as  infile:
