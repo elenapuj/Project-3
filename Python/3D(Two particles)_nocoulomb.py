@@ -75,7 +75,7 @@ plt.xlabel("x (μm)")
 plt.ylabel("y (μm)")
 plt.grid(True)
 
-plt.savefig("3D(Two particles)_nocoulomb_1.pdf")
+plt.savefig("Particle 1 NoCoulomb 3D.pdf")
 
 plt.figure()
 ax = plt.axes(projection='3d')
@@ -88,4 +88,4 @@ plt.ylabel("y (μm)")
 plt.grid(True)
 
 #The graph is saved in a PDF file
-plt.savefig("3D(Two particles)_nocoulomb_2.pdf")
+plt.savefig("Particle 2 NoCoulomb 3D.pdf")
