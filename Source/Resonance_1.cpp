@@ -22,7 +22,7 @@ int main() {
 	mat particles_inside;
 
 	ofstream ofile1;
-	ofile1.open("Problem10a.txt");
+	ofile1.open("Resonance_1.txt");
 	ofile1 << scientific;
 
 	for (int c = 0; c < 3; c++) {
