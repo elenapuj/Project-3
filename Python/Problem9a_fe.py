@@ -45,7 +45,7 @@ plt.grid(True) #Grids get painted
 plt.show()
 
 #The graph is saved in a PDF file
-plt.savefig("Problem_9a_plot_fe.pdf")
+plt.savefig("z vs t FE.pdf")
 
 plt.plot(x, y)
 plt.title("Motion of one particle in the xy plane", fontsize=10)
@@ -55,4 +55,4 @@ plt.grid(True) #Grids get painted
 plt.show()
 
 #The graph is saved in a PDF file
-plt.savefig("Problem_9a_plot_xy_fe.pdf")
+plt.savefig("1part x vs y FE.pdf")
