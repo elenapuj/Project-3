@@ -2,7 +2,6 @@
 
 #include "Particle.hpp"
 
-
 //Constructor
 
 Particle::Particle(double q_in, double m_in, vec r_in, vec v_in){
@@ -17,9 +16,9 @@ Particle::Particle(double q_in, double m_in, vec r_in, vec v_in){
 }
 
 
-
 //Then we define the diferent methods of the class basically for printing the values
 
+//Method that prints the charge of the particle
 void Particle::q(){
 
 	cout << "q=" << q_ << endl;
@@ -27,9 +26,7 @@ void Particle::q(){
 
 }
 
-
-
-
+//Method that prints the mass of the particle
 void Particle::m(){
 
 	cout << "m=" << m_ << endl;
@@ -37,21 +34,21 @@ void Particle::m(){
 
 }
 
-
+//Method that prints the position of the particle
 void Particle::r(){
 
 	r_.print("r=");
 
 }
 
-
+//Method that prints the velociy of the particle
 void Particle::v(){
 
 	v_.print("v=");
 
 }
 
-
+//Method that prints all the values of the previos methods
 void Particle::info(){
 
 	cout << "q=" << q_ << endl;
