@@ -16,12 +16,11 @@ with  open('Resonance_1.txt', "r") as  infile:
         f2.append(float(vals [1]))
         f3.append(float(vals [2]))
         
-h = 0.1
-tf = 100        
+     
 w_z = np.linspace(0.2 , 2.5 , 116 )
-plt.plot(w_z, f1, label = "f=0.1") 
-plt.plot(w_z, f2, label = "f=0.4")
-plt.plot(w_z, f3, label = "f=0.7")
+plt.plot(w_z, f1, label = "f=0.1", color = "red") 
+plt.plot(w_z, f2, label = "f=0.4", color = "blue")
+plt.plot(w_z, f3, label = "f=0.7", color = "green")
 plt.title(r'Fraction of particles (N=100 particles) inside the trap after 500 $\mu s$ vs $\omega_z$', fontsize=10)
 plt.ylabel("Fraction of particles inside" )
 plt.xlabel(r'$\omega_z$ (MHz)') 
