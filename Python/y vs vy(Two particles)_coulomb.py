@@ -78,4 +78,4 @@ plt.ylim([-220, 220])
 plt.grid(True)
 
 #The graph is saved in a PDF file
-plt.savefig("Problem_9c_plot_coulomb_y.pdf")
+plt.savefig("PhaseSpace y Coulomb.pdf")
