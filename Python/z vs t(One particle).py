@@ -44,4 +44,4 @@ plt.xlabel("t (μs)")
 plt.grid(True) #Grids get painted
 
 #The graph is saved in a PDF file
-plt.savefig("Problem_9a_plot.pdf")
+plt.savefig("z vs t.pdf")
