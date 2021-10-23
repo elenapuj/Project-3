@@ -5,7 +5,7 @@
 
 int main(){
 	
-	//The PenningTrap holds a collection of particle
+	//The PenningTrap holds a collection of particles
 	
 	vector<Particle> my_particle_collection;
 
