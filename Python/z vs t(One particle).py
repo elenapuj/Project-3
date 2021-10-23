@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from typing import List
 
 """
-The code opens two data files, creates three vectors for each file, and fills them with the three 
+We open two data files, create three vectors for each file, and fill them with the three 
 components of the position and velocity of the particle respectively
 """
 with  open('Problem9a_Rrk.txt', "r") as  infile:
