@@ -8,8 +8,10 @@ int main(){
 
 	//First we set up our Penning Trap with the desired conditions
 
+	//The Penning trap holds a collection of particles
         vector<Particle> my_particle_collection;
 
+	//We create a specific trap by calling the Penning Trap constructor
         PenningTrap my_trap( 96.5, 9.65 * pow(10 , 8), 10000 , my_particle_collection);
 
 	//Here we introduce some other conditions
@@ -25,22 +27,25 @@ int main(){
         double tf = 100;  //Final time
 
 
-	//After that, we create and introduce 2 particles in the trap. The initial conditions must be the same for both particles
+	//After that, we create and introduce 2 particles in the trap
 
 	int N = 2;  //Number of particles
 
+	//Initial conditions for the first particle
 	vec r01;
 	r01 << 0 << 0 << 0 << endr;
 	vec v01 = vec(3).randu() * h * my_trap.d_;
 	
+	//Initial conditions for the second particle
 	vec r02;
 	r02 << 5 << 5 << 5 << endr;
 	vec v02= vec(3).randu() * h * my_trap.d_;
 
-
+	//We call the Particle constructor to create the particles
         Particle my_particle1( 1 , 40.078 , r01 , v01);
 	Particle my_particle2( 1 , 40.078 , r02 , v02);
 
+	//Here we add the particles mentioned before in the specific Penning trap
         my_trap.add_particle(my_particle1);
 	my_trap.add_particle(my_particle2);
 
