@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 from typing import List
 
 """
-The code opens for data files, creates three vectors for each file, and fills them with the three 
-components of the position or velocity of each o the two particles when the Coulomb interactions are switched on
+We open four data files, create three vectors for each file, and fill them with the three 
+components of the position or velocity of each of the two particles when the Coulomb interactions are switched on
 """
 with  open('Coulomb_r1.txt', "r") as  infile:
     
