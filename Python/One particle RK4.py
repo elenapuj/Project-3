@@ -45,3 +45,12 @@ plt.grid(True) #Grids get painted
 
 #The graph is saved in a PDF file
 plt.savefig("z vs t.pdf")
+
+plt.plot(x, y)
+plt.title("Motion of one particle in the z direction vs time", fontsize=10)
+plt.ylabel("y (μm)" )
+plt.xlabel("x (μm)")
+plt.grid(True) #Grids get painted
+
+#The graph is saved in a PDF file
+plt.savefig("x vs y.pdf")
