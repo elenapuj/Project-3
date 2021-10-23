@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from typing import List
 
-with  open('Problem10a.txt', "r") as  infile:
+with  open('Resonance_1.txt', "r") as  infile:
     
     lines = infile.readlines ()
 
