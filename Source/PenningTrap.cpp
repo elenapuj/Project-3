@@ -1,7 +1,5 @@
 //Here we give definitions for the functions in the PenningTrap class
 
-//FALTA DE ACABAR DE COMENTAR
-
 #include "PenningTrap.hpp"
 
 //Constructor of the Penning Trap class
@@ -302,7 +300,8 @@ void PenningTrap::evolve_RK4(double dt, int i, double t, double f, double w, boo
 
 }
 
-	//Method that
+	
+//Method that counts how many particles are still inside the trap region
 double PenningTrap::number_particles_inside(){
 
 	double number_inside = 0;
