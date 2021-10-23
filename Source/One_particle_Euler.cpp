@@ -15,7 +15,7 @@ int main(){
 	PenningTrap my_trap( 96.5, 9.65 * pow(10 , 8), 10000 , my_particle_collection);
 	
 	
-	//We define some other data for the penning trap
+	//Here we introduce some other conditions
 	
 	double f = 0;  //As this is only necessary when the electric field is time dependent, we define it as zero  
 
