@@ -49,7 +49,7 @@ h = ( 0.01 , 0.05 , 0.1 , 0.5 , 1)
 
 max_error = []
 
-for i in  range(0 , 4):
+for i in  range(0 , 5):
     
 
     with  open(textnames[i], "r") as  infile:
