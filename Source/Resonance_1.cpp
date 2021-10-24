@@ -74,7 +74,7 @@ int main() {
 			fraction[g] = my_trap.number_particles_inside() / N;
 			
 			
-			//And before starting with a new omega, we set the initial conditions again
+			//And before starting with a new omega, we set random initial conditions again
 
 			my_trap.randomize_r_and_v(N ,500);
 			
