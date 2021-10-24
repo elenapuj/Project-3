@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 from typing import List
 
 """
-We open a data file, create three vectors for each file, and fill them with 
+We open a data file, create three vectors for each constant amplitude f, and fill them with 
 the results of the fraction of particles remaining inside the trap for each 
-angular frequency and the constant amplitude f
+angular frequency 
 """
 
 with  open('Resonance_1.txt', "r") as  infile:
