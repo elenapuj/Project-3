@@ -14,7 +14,7 @@ int main() {
 	PenningTrap my_trap(96.5, 0.0025 * 9.64852558 * pow(10, 7), d, my_particle_collection);
 
 	
-	//We create 100 particles Ca+ by calling the Particle constructor
+	//We create and add 100 particles Ca+ by calling the Particle constructor
 
 	
 	//Number of particles
@@ -77,7 +77,7 @@ int main() {
 		fraction[g] = my_trap.number_particles_inside() / N;
 			
 			
-		//And before starting with a new omega, we set the initial conditions again
+		//And before starting with a new omega, we set random initial conditions again
 
 		my_trap.randomize_r_and_v(N , d);
 									
