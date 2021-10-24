@@ -108,7 +108,7 @@ ecr = sum(ecri) / 4
 # General characteristics of the graph
     
 plt.title("Relative error vs time", fontsize=10)
-plt.ylabel(r'$r_{i}$')
+plt.ylabel(r'$rel\_err_{i}$')
 plt.xlabel("t (μs)")
 plt.grid(True) #Grid gets painted
 plt.legend()
