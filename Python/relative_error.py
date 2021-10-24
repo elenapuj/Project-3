@@ -32,9 +32,9 @@ wp = ( w0 + np.sqrt(w0**2-2*w_z**2)) / 2
 
 wl = ( w0 - np.sqrt(w0**2-2*w_z**2)) / 2
 
-Ap = ( v_0 + wl * x_0 ) / (wl - wp )
+Ap = ( v0y + wl * x_0 ) / (wl - wp )
 
-Al = - ( v_0 + wp * x_0 ) / (wl - wp )
+Al = - ( v0y + wp * x_0 ) / (wl - wp )
 
 
 # Simulated values for different stepsizes
