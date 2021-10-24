@@ -12,11 +12,7 @@ int main() {
 
 	PenningTrap my_trap(96.5, 0.0025 * 9.64852558 * pow(10, 7), d, my_particle_collection);
 
-	//We create a particle Ca+ by calling the Particle constructor
-
-	vec r0 = vec(3).randn() * 0.1 * d;
-
-	vec  v0 = vec(3).randn() * 0.1 * d;
+	//We create 100 particles Ca+ by calling the Particle constructor
 
 	//Number of particles
 
@@ -24,7 +20,7 @@ int main() {
 
 	//We add N particles with random initial conditions
 
-	my_trap.add_n_particles(N, 1 , 40.078, r0 , v0);
+	my_trap.add_n_particles(N, 1 , 40.078, d);
 
 	//cout << my_particle_collection.size() << endl;
 
@@ -39,7 +35,7 @@ int main() {
 	mat particles_inside;
 
 	ofstream ofile1;
-	ofile1.open("Resonance_3_Test.txt");
+	ofile1.open("Resonance_2.txt");
 	ofile1 << scientific;
 
 	double h = 1;  //Stepsize
@@ -62,27 +58,12 @@ int main() {
 
 			}
 
-			//cout << w[g] << endl;
-			//cout << my_trap.number_particles_inside() << my_trap.number_particles_inside() / N  << endl;
-
-
 			fraction[g] = my_trap.number_particles_inside() / N;
 
-			my_trap.randomize_r_and_v(N ,r0 , v0);
-			
-
-
-			//my_trap.add_n_particles(N, 1, 40.078, 500);
-						
+			my_trap.randomize_r_and_v(N , d);
+									
 		}
 
-		//fraction.print();
-
-		//particles_inside.insert_cols(c, fraction);
-
-
-	
-	
 	ofile1 << fraction << endl;
 	ofile1.close();
 
