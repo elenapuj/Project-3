@@ -27,21 +27,34 @@ int main() {
 	my_trap.add_n_particles(N, 1 , 40.078, d);
 
 
-	vec fraction = zeros(116);
+	//Now, we introduce some other data we will need
 
 	vec f;
 
 	f << 0.1 << 0.4 << 0.7 << endr;
 
 	vec w = linspace(0.25, 0.75, 116);
+	
+	
+	//And now, we create some elements to store data later
+	
+	vec fraction = zeros(116);
 
 	mat particles_inside;
+	
+	
+	//After that, we open a file for storing how many particles are there in the trap after sometime for each omega
 
 	ofstream ofile1;
-	ofile1.open("Resonance_2.txt");
+	ofile1.open("Resonance_1.txt");
 	ofile1 << scientific;
+	
+	
+	//Then, for each f and each omega, we evoulte the system during 500 microsecs without taking the Coulomb force into account
 
-	double h = 1;  //Stepsize
+	for (int c = 0; c < 3; c++) {
+
+		double h = 1;  //Stepsize
 
 		double tf = 500;  //Final time
 
@@ -60,12 +73,20 @@ int main() {
 				t = t + h;
 
 			}
+			
+			//After evolving the system, we get the number of particles that are still inside the trap
 
 			fraction[g] = my_trap.number_particles_inside() / N;
+			
+			
+			//And before starting with a new omega, we set the initial conditions again
 
 			my_trap.randomize_r_and_v(N , d);
 									
 		}
+		
+		
+	//Finally, we write the data we obtained in the file that we opened before
 
 	ofile1 << fraction << endl;
 	ofile1.close();
