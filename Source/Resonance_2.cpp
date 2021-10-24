@@ -50,42 +50,40 @@ int main() {
 	ofile1 << scientific;
 	
 	
-	//Then, for each f and each omega, we evoulte the system during 500 microsecs without taking the Coulomb force into account
+	//Then, for the third f and each omega, we evoulte the system during 500 microsecs without taking the Coulomb force into account
 
-	for (int c = 0; c < 3; c++) {
+	double h = 1;  //Stepsize
 
-		double h = 1;  //Stepsize
+	double tf = 500;  //Final time
 
-		double tf = 500;  //Final time
-
-		for (int g = 0; g < 116; g++) {			
+	for (int g = 0; g < 116; g++) {			
 			
-			double t = 0;  //Initial time
+		double t = 0;  //Initial time
 
-			while (t <= tf) {
+		while (t <= tf) {
 
-				for (int l = 0; l < N; l++) {
+			for (int l = 0; l < N; l++) {
 
-					my_trap.evolve_RK4(h, l, t, f[2], w[g], true, true, false);
+				my_trap.evolve_RK4(h, l, t, f[2], w[g], true, true, false);
 										
-				}
-								
-				t = t + h;
-
 			}
-			
-			//After evolving the system, we get the number of particles that are still inside the trap
+								
+			t = t + h;
 
-			fraction[g] = my_trap.number_particles_inside() / N;
-			
-			
-			//And before starting with a new omega, we set the initial conditions again
-
-			my_trap.randomize_r_and_v(N , d);
-									
 		}
+			
+		//After evolving the system, we get the number of particles that are still inside the trap
+
+		fraction[g] = my_trap.number_particles_inside() / N;
+			
+			
+		//And before starting with a new omega, we set the initial conditions again
+
+		my_trap.randomize_r_and_v(N , d);
+									
+	}
 		
-		
+	
 	//Finally, we write the data we obtained in the file that we opened before
 
 	ofile1 << fraction << endl;
