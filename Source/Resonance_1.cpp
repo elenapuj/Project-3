@@ -20,6 +20,8 @@ int main() {
 
 
 	//Now, we introduce some other data we will need
+	
+	//The constant amplitude of the time-dependent potential: V0(1+fcos(w_V t))
 
 	vec f;
 
