@@ -23,7 +23,6 @@ with  open('Resonance_3.txt', "r") as  infile:
         coulomb.append(float(vals [0]))
        
 w_z = np.linspace(0.25 , 0.75 , 116 )
-#plt.figure(figsize=(5,5))
 plt.plot(w_z, no_coulomb, label = "Without Coulomb", color = "blue")
 plt.plot(w_z, coulomb, label = "With Coulomb", color = "red") 
 plt.title(r'Fraction of particles (N=100 particles) inside the trap after 500 $\mu s$ vs $\omega_z$', fontsize=10)
