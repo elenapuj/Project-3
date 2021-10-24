@@ -50,7 +50,7 @@ int main() {
 
 				for (int l = 0; l < N; l++) {
 
-					my_trap.evolve_RK4(h, l, t, f[2], w[g], true, true, true);
+					my_trap.evolve_RK4(h, l, t, f[2], w[g], true, true, false);
 										
 				}
 								
