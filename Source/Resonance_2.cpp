@@ -6,23 +6,26 @@ int main() {
 
 	vector<Particle> my_particle_collection;
 
+	
 	//We create an specific trap by calling the PenningTrap constructor
 
 	int d = 500;
 
 	PenningTrap my_trap(96.5, 0.0025 * 9.64852558 * pow(10, 7), d, my_particle_collection);
 
+	
 	//We create 100 particles Ca+ by calling the Particle constructor
 
+	
 	//Number of particles
 
 	double N = 100;
 
+	
 	//We add N particles with random initial conditions
 
 	my_trap.add_n_particles(N, 1 , 40.078, d);
 
-	//cout << my_particle_collection.size() << endl;
 
 	vec fraction = zeros(116);
 
