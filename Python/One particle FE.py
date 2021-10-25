@@ -55,4 +55,4 @@ plt.grid(True) #Grids get painted
 plt.show()
 
 #The graph is saved in a PDF file
-plt.savefig("1part x vs y FE.pdf")
+plt.savefig("x vs y FE.pdf")
