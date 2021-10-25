@@ -50,7 +50,7 @@ int main() {
 	ofile1 << scientific;
 	
 	
-	//Then, for the third f and each omega, we evoulte the system during 500 microsecs without taking the Coulomb force into account
+	//Then, for the third f and each omega, we evoulte the system during 500 microsecs, changing the bool used to take(or not) the Coulomb force into account for producing both "Resonance_2.txt" and "Resonance_3.txt"
 
 	double h = 1;  //Stepsize
 
