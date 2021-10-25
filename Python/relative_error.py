@@ -94,16 +94,6 @@ for i in  range(0 , 5):
     plt.plot(t, r_e, label="h=" + h_name[i])
     
     
-# Error convergence rate
-
-ecri = []
-
-for i in  range(1,4):  
-    
-    arg = np.log10(max_error[i]/max_error[i-1]) / np.log10(h[i]/h[i-1])
-    ecri.append( arg  )
-    
-ecr = sum(ecri) / 4
     
 # General characteristics of the graph
     
@@ -114,3 +104,18 @@ plt.grid(True) #Grid gets painted
 plt.legend()
 plt.savefig("relative_error.pdf")
 plt.show()
+
+
+
+
+# Error convergence rate
+
+ecri = []
+
+for i in  range(1,4):  
+    
+    arg = np.log10(max_error[i]/max_error[i-1]) / np.log10(h[i]/h[i-1])
+    ecri.append( arg  )
+    
+ecr = sum(ecri) / 4
+
