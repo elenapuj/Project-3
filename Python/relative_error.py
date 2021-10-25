@@ -102,5 +102,5 @@ plt.ylabel(r'$rel\_err_{i}$')
 plt.xlabel("t (μs)")
 plt.grid(True) #Grid gets painted
 plt.legend()
-plt.savefig("relative_error.pdf")
+plt.savefig("relative_error_RK4.pdf")
 plt.show()
