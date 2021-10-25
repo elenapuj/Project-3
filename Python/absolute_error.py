@@ -122,4 +122,4 @@ for i in  range(1,4):
     
 ecr = sum(ecri) / 4
 
-print(erc)
+print(ecr)
