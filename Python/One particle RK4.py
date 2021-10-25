@@ -44,7 +44,7 @@ plt.xlabel("t (μs)")
 plt.grid(True) #Grids get painted
 
 #The graph is saved in a PDF file
-plt.savefig("z vs t.pdf")
+plt.savefig("z vs t RK.pdf")
 
 plt.plot(x, y)
 plt.title("Motion of one particle in the z direction vs time", fontsize=10)
