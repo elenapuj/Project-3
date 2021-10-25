@@ -105,7 +105,7 @@ plt.ylabel(r'$abs\_e_{i} (μm)$')
 plt.xlabel("t (μs)")
 plt.grid(True) #Grid gets painted
 plt.legend()
-plt.savefig("absolute_error.pdf")
+plt.savefig("absolute_error_RK4.pdf")
 plt.show()
 
 
