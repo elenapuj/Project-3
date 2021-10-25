@@ -41,9 +41,9 @@ Al = - ( v0y + wp * x_0 ) / (wl - wp )
 
 # Simulated values for different stepsizes
 
-textnames = ['Rel_error_h1.txt' , 'Rel_error_h2.txt' , 'Rel_error_h3.txt' , 
+textnames = ['R_RK4_h1.txt' , 'R_RK4_h2.txt' , 'R_RK4_h3.txt' , 
              
-             'Rel_error_h4.txt' , 'Rel_error_h5.txt' ]
+             'R_RK4_h4.txt' , 'R_RK4_h5.txt' ]
 
 h_name = [ "0.01" , "0.05" , "0.1" , "0.5" , "1"]
 
@@ -121,3 +121,5 @@ for i in  range(1,4):
     ecri.append( arg  )
     
 ecr = sum(ecri) / 4
+
+print(erc)
