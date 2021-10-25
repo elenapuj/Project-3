@@ -6,7 +6,7 @@ from typing import List
 We opentwo data files, create three vectors for each file, and fill them with the three 
 components of the position and velocity of the particle respectively
 """
-with  open('1part R FE.txt', "r") as  infile:
+with  open('R_FE_h3.txt', "r") as  infile:
     
     lines = infile.readlines ()
 
@@ -20,7 +20,7 @@ with  open('1part R FE.txt', "r") as  infile:
         y.append(float(vals [1]))
         z.append(float(vals [2]))
         
-with  open('1part V FE.txt', "r") as  infile:
+with  open('V_FE_h3.txt', "r") as  infile:
     lines = infile.readlines ()
 
     vx: List[float] = []
