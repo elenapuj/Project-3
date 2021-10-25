@@ -44,7 +44,7 @@ int main() {
 	//After that, we open a file for storing how many particles are there in the trap after sometime for each omega
 
 	ofstream ofile1;
-	ofile1.open("Resonance_2.txt");
+	ofile1.open("Resonance_3.txt");
 	ofile1 << scientific;
 	
 	
