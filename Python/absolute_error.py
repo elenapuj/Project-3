@@ -14,6 +14,7 @@ v_0 = 9.65e8 # Potential
 
 d =  10000 # Size of the box
 
+
 # Initial values 
 
 x_0 = 0
@@ -21,6 +22,7 @@ x_0 = 0
 v0y = 1
 
 z_0 = 1
+
 
 # Analythical solutions
 
@@ -66,8 +68,9 @@ for i in  range(0 , 5):
             y.append(float(vals [1]))
             z.append(float(vals [2]))
     
+
     # Time
-    
+        
     tf = 100 # Final time
     
     t = np.linspace(0 , tf, len(x) )
@@ -93,7 +96,21 @@ for i in  range(0 , 5):
             
     plt.plot(t, abs_e, label="h=" + h_name[i])
     
+
+        
+# General characteristics of the graph
     
+plt.title("Absolute error vs time", fontsize=10)
+plt.ylabel(r'$abs\_e_{i} (μm)$')
+plt.xlabel("t (μs)")
+plt.grid(True) #Grid gets painted
+plt.legend()
+plt.savefig("absolute_error.pdf")
+plt.show()
+
+
+
+
 # Error convergence rate
 
 ecri = []
@@ -104,13 +121,3 @@ for i in  range(1,4):
     ecri.append( arg  )
     
 ecr = sum(ecri) / 4
-    
-# General characteristics of the graph
-    
-plt.title("Absolute error vs time", fontsize=10)
-plt.ylabel(r'$abs\_e_{i} (μm)$')
-plt.xlabel("t (μs)")
-plt.grid(True) #Grid gets painted
-plt.legend()
-plt.savefig("absolute_error.pdf")
-plt.show()
